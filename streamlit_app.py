@@ -59,7 +59,7 @@ else:
         stream = client.chat.completions.create(
             model="gpt-4o",
             messages=[
-                {"role":"system", "content":system_prompt},
+                {"role":"system", "content":system_prompt}]+[
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
             ],
